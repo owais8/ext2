@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie PeriodicFetcher",
+  "version": "1.0",
+  "run_at": "document_end",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "cookies",
+    "alarms",
+    "tabs",
+    "activeTab",
+    "scripting"
+
+  ],
+  "host_permissions": [
+    "https://www.psacard.com/myaccount/myorders"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://www.psacard.com/myaccount/myorders"],
+    "js": ["content.js"]
+}]
+}
+
